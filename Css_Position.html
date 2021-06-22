@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+	<style type="text/css">
+		*{
+			margin: 0;padding: 0;box-sizing: border-box;
+		}
+		body{
+			background: red;
+			height: 200vh;
+		}
+		#Abs{
+			position: absolute;
+			top: 10vh;
+			height: 10vh;
+			width: 50vw;
+			left: 20vw;
+
+			background: yellow;
+		}
+		#AbsAbs{
+			position: absolute;
+			background: lightgray;
+			top: 20%;
+			left: 20%;
+			padding: 10px;
+		}
+		#Rel{
+			position: relative;
+			background: green;
+			height: 8vh;
+		}
+		#RelAbs{
+			position:absolute;
+			background: lightgray;
+			top: 20%;
+			left: 20%;
+		}
+		#Absfx,#Relfx{
+			position: fixed;
+			top: 0%;			
+			background: black;
+			color: white;
+		}
+		li{
+			margin:5px;
+			margin-left: 20px;
+		}
+	</style>
+</head>
+<body>
+	<div>Dummy div</div>
+<div id="Rel">
+	<div>I am relative;</div>
+	<div id="RelAbs">
+		I am absolute about my parent;
+	</div>
+	<div id="Relfx"> I am fixed;</div>
+
+</div>
+<div style="position: relative;">
+	
+
+<div id="Abs">
+	<div>I am absolute;</div>
+	<div id="AbsAbs">
+		I am absolute about my parent;
+	</div>
+	<div id="Absfx"> I am fixed;</div>
+
+</div>
+
+</div>
+
+<div style="position: absolute;top:50vh;
+left:5vw;width: 90vw;">
+	<textarea style="background: white;padding: 10px;width: 100%;height: 180px;font-size: 25px;">
+<div class="parent">
+     <div class="child">
+           <div class="grandchild"></div>
+     </div>
+</div>
+
+</textarea>
+<ol style="background: white;padding: 10px;font-size: 25px;">
+	<li>If grandchild has position: absolute, it will position itself relative to the browser window because there is no parent with a position other than the default of static.
+
+</li><li>If parent also has position of relative, absolute, or fixed, grandchild will position itself relative to the boundaries of parent.
+
+</li><li>However, if child also has a position of relative, absolute, or fixed, the grandchild will position itself relative to child's boundaries, because it is the nearest parent with a position other than static.
+
+</li><li>In summary, relative affects an element's children, while absolute and fixed affect the element itself as well as its children.
+
+</li><li>And remember that position: fixed bypasses all relative and absolute parents and always positions itself relative to the browser window.</li>
+</ol>
+</div>
+
+
+
+
+</body>
+</html>
